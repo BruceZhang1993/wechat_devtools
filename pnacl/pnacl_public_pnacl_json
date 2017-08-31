@@ -5,7 +5,7 @@
         "hard-coding of NaCl-specific information inside the Chrome repository."
     ], 
     "abi-version": 1, 
-    "pnacl-arch": "x86-32", 
+    "pnacl-arch": "x86-64", 
     "pnacl-ld-name": "ld.nexe", 
     "pnacl-llc-name": "pnacl-llc.nexe", 
     "pnacl-sz-name": "pnacl-sz.nexe", 
