@@ -38,3 +38,8 @@ https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 微信开发者
   (sudo) su
   echo ":DOSWin:M::MZ::/usr/bin/wine:" >> /proc/sys/fs/binfmt_misc/register
   ```
+  ##### 可使用 crontab 设置为开机自动运行
+  ```
+  sudo crontab -e
+  #  @reboot echo ":DOSWin:M::MZ::/usr/bin/wine:" >> /proc/sys/fs/binfmt_misc/register
+  ```
