@@ -38,8 +38,9 @@ https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 微信开发者
   (sudo) su
   echo ":DOSWin:M::MZ::/usr/bin/wine:" >> /proc/sys/fs/binfmt_misc/register
   ```
-  ##### 可使用 crontab 设置为开机自动运行
+  ##### 使上面的设置永久生效
   ```
-  sudo crontab -e
-  #  @reboot echo ":DOSWin:M::MZ::/usr/bin/wine:" >> /proc/sys/fs/binfmt_misc/register
+  Root 权限编辑 /etc/tmpfiles.d/enable-exe.conf
+  # 复制下方一行内容到文件并保存
+  w /proc/sys/fs/binfmt_misc/register - - - - :DOSWin:M::MZ::/usr/bin/wine:
   ```
