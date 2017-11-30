@@ -30,12 +30,23 @@ const sendQueue = (protocol) => {
 }
 
 const _onMessage = (protocol, data) => {
+  let [mainProtocol, subProtocol] = getProtocol(protocol)
+
   let handlers = _events[protocol]
   if (handlers) {
-
     handlers.forEach((cb) => {
       cb(data)
     })
+  }
+
+  // 可以只监听主协议
+  if (mainProtocol != protocol) {
+    handlers = _events[mainProtocol]
+    if (handlers) {
+      handlers.forEach((cb) => {
+        cb(data)
+      })
+    }
   }
 }
 
